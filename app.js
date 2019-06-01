@@ -44,6 +44,9 @@ mongoose.connection.openUri(config.db, (err, res) => {
 
     console.log('Base de datos: \x1b[32m%s\x1b[0m', 'online');
 
+    app.listen(config.port, () => {
+        console.log(`API REST corriendo en http://localhost:${config.port}`);
+    })
 });
 
 // Rutas
