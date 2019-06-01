@@ -1,7 +1,8 @@
 // Requires
 var express = require('express');
 var mongoose = require('mongoose');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+const config = require('./config/config');
 
 
 // Inicializar variables
@@ -38,7 +39,7 @@ var uploadRoutes = require('./routes/upload');
 
 
 // Conexión a la base de datos
-mongoose.connection.openUri('mongodb://localhost:27017/hospitalDB', (err, res) => {
+mongoose.connection.openUri(config.db, (err, res) => {
     if (err) throw err;
 
     console.log('Base de datos: \x1b[32m%s\x1b[0m', 'online');
