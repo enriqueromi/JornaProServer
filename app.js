@@ -11,7 +11,7 @@ var app = express();
 
 // Cors
 app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:4200/#*');
+    res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header('Access-Control-Allow-Headers', 'x-www-form-urlencoded, Origin, Authorization, Content-Length, X-Requested-With, X-Forwarded-For, X-Forwarded-Proto, X-Forwarded-Port, X-Request-Start, X-Request-Id, Content-Type, Accept');
     res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
