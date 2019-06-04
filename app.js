@@ -11,10 +11,12 @@ var app = express();
 
 // Cors
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost");
-    res.header("Access-Control-Allow-Credentials", true);
-    res.header("Access-Control-Allow-Headers", "x-www-form-urlencoded, Origin, Authorization, Content-Length, X-Requested-With, X-Forwarded-For, X-Forwarded-Proto, X-Forwarded-Port, X-Request-Start, X-Request-Id, Content-Type, Accept");
-    res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
+    res.header('Access-Control-Allow-Origin', 'http://localhost');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header('Access-Control-Allow-Headers', 'x-www-form-urlencoded, Origin, Authorization, Content-Length, X-Requested-With, X-Forwarded-For, X-Forwarded-Proto, X-Forwarded-Port, X-Request-Start, X-Request-Id, Content-Type, Accept');
+    res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Request-Method', '*');
+    res.header('Access-Control-Max-Age', '1728000');
     if (req.method === 'OPTIONS') {
         res.send(200);
     } else {
