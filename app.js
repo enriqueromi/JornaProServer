@@ -25,9 +25,9 @@ app.options('*', cors());
 
 // Body Parser
 // parse application/x-www-form-urlencoded
-// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 
 
