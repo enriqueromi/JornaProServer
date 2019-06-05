@@ -9,18 +9,25 @@ var cors = require('cors');
 // Inicializar variables
 const app = express();
 
+var corsOptions = {
+    origin: 'http://localhost:4200',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 
-// Cors
-// app.use(function(req, res, next) {
-//     res.header('Access-Control-Allow-Origin', '');
-//     res.header('Access-Control-Allow-Headers', ' Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
-//     res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
-//     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
-//     next();
-// });
-// Create express server
-app.use(cors());
-app.options('*', cors());
+app.get('/products/:id', cors(corsOptions), function(req, res, next) {
+        res.json({ msg: 'This is CORS-enabled for only example.com.' })
+    })
+    // Cors
+    // app.use(function(req, res, next) {
+    //     res.header('Access-Control-Allow-Origin', '');
+    //     res.header('Access-Control-Allow-Headers', ' Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    //     res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
+    //     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    //     next();
+    // });
+    // Create express server
+    // app.use(cors());
+    // app.options('*', cors());
 
 
 
