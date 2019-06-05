@@ -20,7 +20,7 @@ const app = express();
 // Create express server
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
 
     // authorized headers for preflight requests
     // https://developer.mozilla.org/en-US/docs/Glossary/preflight_request
